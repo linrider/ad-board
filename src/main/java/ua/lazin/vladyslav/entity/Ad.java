@@ -25,8 +25,7 @@ public class Ad {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ad_id")
     int id;
-    
-    @Column(name = "subject")
+
     String subject;
 
     @Column(name = "publication_date")

@@ -1,17 +1,12 @@
 package ua.lazin.vladyslav;
 
-import java.util.List;
-import java.util.Set;
-
-import ua.lazin.vladyslav.entity.Address;
-import ua.lazin.vladyslav.entity.Author;
-import ua.lazin.vladyslav.entity.Email;
-import ua.lazin.vladyslav.entity.Phone;
-import ua.lazin.vladyslav.entity.Rubric;
+import ua.lazin.vladyslav.entity.*;
 import ua.lazin.vladyslav.service.AuthorService;
 import ua.lazin.vladyslav.service.CrudService;
 import ua.lazin.vladyslav.service.impl.AuthorServiceImpl;
-import ua.lazin.vladyslav.service.impl.CrudServiceImpl;
+
+import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {

@@ -32,4 +32,7 @@ public class Rubric {
     @Column(name = "rubric_name")
     String name;
 
+    @OneToMany(mappedBy = "rubric", fetch = FetchType.LAZY)
+    List<Ad> ads;
+
 }
