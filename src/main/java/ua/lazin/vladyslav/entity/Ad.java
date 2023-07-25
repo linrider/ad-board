@@ -3,6 +3,8 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,11 +22,15 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Ad {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ad_id")
     int id;
+
+    @Version
+    int version;
 
     String subject;
 
@@ -32,6 +38,10 @@ public class Ad {
     LocalDate publicationDate;
 
     float price;
+
+    @Column(name = "deal_type")
+    @Enumerated(EnumType.STRING)
+    DealType dealType;
 
     @Column(name = "ad_text")
     String adText;

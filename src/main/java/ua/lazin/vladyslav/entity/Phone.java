@@ -1,14 +1,10 @@
 package ua.lazin.vladyslav.entity;
 import javax.persistence.*;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -18,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @ToString
 @Table
+@EqualsAndHashCode
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Phone {
     @Id
@@ -25,6 +22,8 @@ public class Phone {
     @Column(name = "phone_id")
     int id;
 
-    String number;
+    @Version
+    int version;
 
+    String number;
 }

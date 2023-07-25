@@ -3,13 +3,13 @@ package ua.lazin.vladyslav.service;
 import java.util.List;
 
 public interface CrudService<T> {
-    public void save(T t);
+    void save(T t);
 
-    public void update(T t);
+    void update(T t);
 
-    public void deleteById(Class<T> entityClass, int id);
+    void deleteById(int id);
 
-    public T findById(Class<T> entityClass, int id);
+    T findById(int id);
 
-    public List<T> findAll(Class<T> entityClass);
+    List<T> findAll();
 }

@@ -3,6 +3,7 @@ package ua.lazin.vladyslav.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -12,13 +13,15 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-
-@ComponentScan(basePackages = {"ua.lazin.vladyslav.dao", "ua.lazin.vladyslav.service"})
+@Configuration
+@ComponentScan(basePackages = {"ua.lazin.vladyslav.dao", "ua.lazin.vladyslav.service", "ua.lazin.vladyslav.controller"})
 @EnableTransactionManagement
 @EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableWebMvc
 public class ConfigApp {
 
     @Bean

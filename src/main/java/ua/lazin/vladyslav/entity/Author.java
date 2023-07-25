@@ -27,8 +27,8 @@ public class Author {
     @Column(name = "author_id")
     int id;
 
-    // @Version
-    // int version;
+     @Version
+     int version;
 
     @Column(name = "first_name")
     String firstName;

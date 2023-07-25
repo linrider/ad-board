@@ -24,6 +24,9 @@ public class Address {
     @Column(name = "address_id")
     int id;
 
+    @Version
+    int version;
+
     String city;
 
     String street;
