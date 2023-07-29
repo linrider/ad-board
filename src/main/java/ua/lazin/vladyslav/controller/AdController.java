@@ -10,7 +10,7 @@ import ua.lazin.vladyslav.service.impl.AdServiceImpl;
 import java.util.List;
 
 @RestController
-@RequestMapping("ad/ads/*")
+@RequestMapping("ad/ads")
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AdController {
@@ -21,20 +21,20 @@ public class AdController {
     }
     @PutMapping
     public void update(@RequestBody Ad ad) {
-        service.save(ad);
+        service.update(ad);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Ad findById(@PathVariable(value = "id") int id) {
         return service.findById(id);
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Ad> findAll() {
         return service.findAll();
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable(value = "id") int id) {
         service.deleteById(id);
     }

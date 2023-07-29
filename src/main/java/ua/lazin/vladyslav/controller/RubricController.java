@@ -10,7 +10,7 @@ import ua.lazin.vladyslav.service.impl.RubricServiceImpl;
 import java.util.List;
 
 @RestController
-@RequestMapping("rubric/rubrics/*")
+@RequestMapping("rubric/rubrics")
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RubricController {
@@ -22,20 +22,20 @@ public class RubricController {
     }
     @PutMapping
     public void update(@RequestBody Rubric rubric) {
-        service.save(rubric);
+        service.update(rubric);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Rubric findById(@PathVariable(value = "id") int id) {
         return service.findById(id);
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Rubric> findAll() {
         return service.findAll();
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable(value = "id") int id) {
         service.deleteById(id);
     }

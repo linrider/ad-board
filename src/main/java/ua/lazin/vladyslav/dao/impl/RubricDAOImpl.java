@@ -46,7 +46,7 @@ public class RubricDAOImpl implements CrudDAO<Rubric> {
     @Override
     public List<Rubric> findAll() {
         TypedQuery<Rubric> query = entityManager.createQuery(
-                "FROM Rubric r JOIN FETCH r.ads", Rubric.class);
+                "FROM Rubric r", Rubric.class);
         return query.getResultList();
     }
 }
